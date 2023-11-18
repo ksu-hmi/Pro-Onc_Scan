@@ -13,4 +13,8 @@
 
 ### Sprint 2
 
-TBD
+[x] Add initial sample code from "Global Entry" repository
+
+[x] Make changes to customize code and test function and output
+
+[x] Review Github for other code that can better meet the project objective

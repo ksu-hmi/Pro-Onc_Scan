@@ -1,9 +1,13 @@
-import requests
+import datetime
 from datetime import datetime, timedelta
-import smtplib
-from email.message import EmailMessage
 
-# only shows locations with available appts. may need to hardcode locations
+def program_email(subject, body)"New Radiology Appointment Available: \n Please see appointmeht details")
+    system_email_address = "Scans4U@ ProScan.com"
+    system_password= "Password 7540fa"
+    patient_email= "Patient23@gmail.com"
+
+    print("Notification as requested to email", patient_email + :\n, subject, \n body)
+# To locations with available appts, will need to scrape location availability or create list
 # locations = requests.get("https://ttp.cbp.dhs.gov/schedulerapi/slots/asLocations?limit=100").json()
 
 # names_ids = {}

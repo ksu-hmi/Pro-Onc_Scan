@@ -1,9 +1,9 @@
 import datetime
 from datetime import datetime, timedelta
 
-def program_email(subject, body)"New Radiology Appointment Available: \n Please see appointmeht details")
+def program_email(subject, body)
     system_email_address = "Scans4U@ ProScan.com"
-    system_password= "Password 7540fa"
+    system_password= "Password7540fa"
     patient_email= "Patient23@gmail.com"
 
     print("Notification as requested to email", patient_email + :\n, subject, \n body)

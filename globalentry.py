@@ -28,7 +28,10 @@ def check_appointment():
     URL = "https://radiology-scheduler-api.com/slots?orderBy=soonest&limit=1&locationId=1234&minimum=1"
     init = datetime.now() - timedelta(seconds=1)
     
-# To find locations with available appts, will need to scrape location availability or create list
+## To find locations with available appts, will need to scrape location availability or create list
+#replace 'smtp.example.com' with the appropriate SMTP server for your email provider
+#find correct SMTP server and port number (587) email provider, you usually need to consult the documentation online
+#create and add email address
 
 you = ''
 """

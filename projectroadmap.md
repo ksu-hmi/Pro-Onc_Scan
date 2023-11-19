@@ -23,7 +23,7 @@
 
 [x] Browse existing cloned repository and other github repository to see how email functions can be added in the project code
 
-[x] Reduce the items in the sample code that have no relevance to the projectd
+[x] Reduce the items in the sample code that have no relevance to the project
 
 ### Sprint 3
 [ ] Create account to Test email function 

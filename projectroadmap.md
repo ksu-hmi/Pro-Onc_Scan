@@ -13,8 +13,24 @@
 
 ### Sprint 2
 
-[x] Add initial sample code from "Global Entry" repository
+[x] Add initial sample code from "Global Entry" repository by Git Bash
 
 [x] Make changes to customize code and test function and output
 
+[x] Receive feedback and tips from Dr. Thomas to support project progress
+
 [x] Review Github for other code that can better meet the project objective
+
+[x] Browse existing cloned repository and other github repository to see how email functions can be added in the project code
+
+[x] Reduce the items in the sample code that have no relevance to the projectd
+
+### Sprint 3
+[ ] Create account to Test email function 
+
+[ ] Create  file or locate scrape resources to for appointment output
+
+[ ] Review github and other python resources for any revisions or addtions to support project
+
+[ ] Create repository presentation
+

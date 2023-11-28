@@ -19,11 +19,13 @@ def send_email(appt, email, password):
     msg['From'] = 'testmailbox2024.com'
     msg['To'] = email
 
-  try:  
+try:  
     with smtplib.SMTP_PORT('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login(email,password)
         server.send_message(msg)
+except Exception as e:
+    print('An error occurred while sending email:')
 
 def check_appointment():
     URL = "https://radiology-scheduler-api.com/slots?orderBy=soonest&limit=1&locationId=1234&minimum=1"

@@ -17,7 +17,7 @@ def send_email(appt, email, password):
     msg.set_content(text)
     msg['Subject'] = 'Radiology Appointment Availability'
     msg['From'] = 'testmailbox2024.com'
-    msg['To'] = email
+    msg['To'] = 'glawre19@students.kennesaw.edu'
 
 try:  
     with smtplib.SMTP_PORT('smtp.gmail.com', 587) as server:
@@ -29,7 +29,7 @@ except Exception as e:
 
 def check_appointment():
     URL = "https://radiology-scheduler-api.com/slots?orderBy=soonest&limit=1&locationId=1234&minimum=1"
-    init = datetime.now() - timedelta(seconds=1)
+    last_check = datetime.now() - timedelta(seconds=1)
     
 ## To find locations with available appts, will need to scrape location availability or create list
 #replace 'smtp.example.com' with the appropriate SMTP server for your email provider
@@ -46,20 +46,23 @@ Uncomment this section if you wanted to query for the next N days instead of the
 
 URL = 1
 
-init = datetime.now() - timedelta(seconds=1)
+last_check = datetime.now() - timedelta(seconds=1)
 
 
 
 while True:
-    if (datetime.now() - init > timedelta(seconds=1)):
+    if (datetime.now() - last_check > timedelta(seconds=1)):
         appt = requests.get(URL).json()
         # there exists an appointment
-        init = datetime.now()
+        last_check = datetime.now()
+
         if len(appt) > 0:
             print("There is an appointment available.")
         if len(appt) > 0:
             send_email(appt)
             break
         else: 
-            print("No Appointment found.",appt, init)
+            print("No Appointment found.",appt, last_check)
             break
+
+check_appointment()

@@ -16,10 +16,11 @@ def send_email(appt, email, password):
     msg = EmailMessage()
     msg.set_content(text)
     msg['Subject'] = 'Radiology Appointment Availability'
-    msg['From'] = 'ProScan@radiology.com'
+    msg['From'] = 'testmailbox2024.com'
     msg['To'] = email
 
-    with smtplib.SMTP_PORT('smtp.example.com', 587) as server:
+  try:  
+    with smtplib.SMTP_PORT('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login(email,password)
         server.send_message(msg)

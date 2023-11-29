@@ -26,11 +26,15 @@
 [x] Reduce the items in the sample code that have no relevance to the project
 
 ### Sprint 3
-[ ] Create account to Test email function 
+[x] Create account to Test email function 
 
 [ ] Create  file or locate scrape resources to for appointment output
 
-[ ] Review github and other python resources for any revisions or addtions to support project
+[x] Review github and other python resources for any revisions or addtions to support project
 
-[ ] Create repository presentation
+[x] Create repository presentation introductory slide
+
+[x] Work up code to get output for email
+
+### Presentation
 

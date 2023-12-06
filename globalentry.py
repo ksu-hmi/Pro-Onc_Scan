@@ -30,7 +30,7 @@ except Exception as e:
     print('An error occurred while sending email:')
 
 def check_appointment():
-    csv_path = "C:\Users\grete\OneDrive - Kennesaw State University\HMI 7540-Hlthcare Info Sys. Fall 2023\mock_appointments.csv"
+    csv_path = r'C:\Users\grete\OneDrive - Kennesaw State University\HMI 7540-Hlthcare Info Sys. Fall 2023\mock_appointments.csv'
     last_check = datetime.now() - timedelta(seconds=1)
     
     try:

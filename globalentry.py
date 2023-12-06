@@ -13,7 +13,7 @@ def get_password():
     return getpass("Enter your email password: ")
 
 def send_email(Location, Date, Time, email, password):
-    text = "Hello. There is an available radiology appointment at {Date} {Time} at {Location}."
+    text = ("Hello. There is an available radiology appointment at {Date} {Time} at {Location}.")
 
     msg = EmailMessage()
     msg.set_content(text)
@@ -27,7 +27,7 @@ try:
         server.login(email, password)
         server.send_message(msg)
 except Exception as e:
-    print('An error occurred while sending email:')
+    print('An error occurred while sending email:{e}')
 
 def check_appointment():
     csv_path = r'C:\Users\grete\OneDrive - Kennesaw State University\HMI 7540-Hlthcare Info Sys. Fall 2023\mock_appointments.csv'

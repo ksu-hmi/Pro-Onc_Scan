@@ -1,4 +1,4 @@
-import requests
+import pandas as pd
 from datetime import datetime, timedelta
 import smtplib
 from email.message import EmailMessage
@@ -10,9 +10,8 @@ def get_email_secure():
     return email, password
 
 
-def send_email(appt, email, password):
-    date = datetime.strptime(appt[0]['startTimestamp'], '%Y-%m-%dT%H:%M')
-    text = "Hello. There is an available radiology appointment at {wkday}, {mth} {d} at {time}.".format(wkday=date.strftime('%A'), mth=date.strftime('%B'), d=date.strftime('%d'), time=date.strftime('%I:%M %p'))
+def send_email(Location, Date, Time, email, password):
+    text = "Hello. There is an available radiology appointment at {Date} {Time} at {Location}."
 
     msg = EmailMessage()
     msg.set_content(text)
@@ -29,25 +28,28 @@ except Exception as e:
     print('An error occurred while sending email:')
 
 def check_appointment():
-    URL = "None"
+    csv_path = "C:\Users\grete\OneDrive - Kennesaw State University\HMI 7540-Hlthcare Info Sys. Fall 2023\mock_appointments.csv"
     last_check = datetime.now() - timedelta(seconds=1)
     
     while True:
         if (datetime.now() - last_check > timedelta(seconds=1)):
             try:
-                appt = requests.get(URL).json()
-             # there exists an appointment
-                last_check = datetime.now()
-                
-                if len(appt) > 0:
-                    print("There is an appointment available.")
-                    send_email(appt, email, password)
-                    break
-                else: 
-                    print("No Appointment found.",appt, last_check)
-                    break
-            except requests.RequestException as e:
-                print("Error during API request:{e}")
+                appts_df = pd.read_csv(csv_path)
+
+                if not appts_df.empty:
+                    appt = appts_df.iloc[0]
+                    Location = appt['Location']
+                    Date =appt['Date']
+                    Time = appt['Time']
+                print("There is an appointment available: Location=", Location + "Date= "Date, "Time= ",Time)
+                send_email(location, date, time, email, password)
+                break
+        else:
+            print("No Appointment found.")
+            break
+        except Exception as e:
+        print("Error during appointment check:{e}")
+        
 if __name__ == "__main __":
     email, password = get_email_secure()
     check_appointment()
